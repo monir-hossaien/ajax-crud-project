@@ -89,7 +89,7 @@ async function createData() {
       "http://164.68.107.70:6060/api/v1/CreateProduct",
       data
     );
-
+    
     //loader
     document.getElementById("loader-animation").style.display = "none";
 
@@ -111,7 +111,7 @@ async function createData() {
       toastMessage.classList.add("msg-style-fail");
 
       setTimeout(() => {
-        (toastMessage.innerHTML = ""),
+        toastMessage.innerHTML = "",
           toastMessage.classList.remove("msg-style-fail");
       }, 2000);
     }
@@ -124,3 +124,6 @@ async function createData() {
     document.getElementById("totalPrice").value = "";
   }
 }
+
+
+

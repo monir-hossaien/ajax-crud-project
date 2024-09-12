@@ -1,22 +1,27 @@
 
 /* --------------google font----------- */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /* -----------universal------------ */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-body{
     font-family: "Open Sans", sans-serif;
-
 }
+
 .container{
     width: 80%;
 }
+.card{
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+}
+html, body {
+    overflow: hidden;
+}
 
 /* --------------navbar------------ */
+
 nav{
     & .navbar-brand{
         font-size: 28px;
@@ -25,9 +30,10 @@ nav{
         }
     }
     & ul{
+        margin-left: 3rem;
         & li a{
             text-decoration: none;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 600;
             color: #fff;
             position: relative;
@@ -36,7 +42,7 @@ nav{
                 content: '';
                 position: absolute;
                 width:0;
-                height: 3px;
+                height: 2px;
                 left: 0;
                 bottom: -8px;
                 background-color: #FA0452;
@@ -55,9 +61,6 @@ nav{
 /* -----------product section---------- */
 
 .product-section{
-    position: relative;
-    width: 100%;
-    height: 80vh;
     & .title{
         font-size: 24px;
         margin-bottom: 2rem;
@@ -67,8 +70,7 @@ nav{
     }
     & .form-control{
         margin-bottom: 3.5rem;
-        
-                
+        font-size: 14px;        
         &:focus{
             box-shadow: 0px 0px 5px 0px rgba(237,12,87,1);
             
@@ -82,18 +84,55 @@ nav{
         width: 10rem;
         padding: 0.8rem 1.5rem;
         background-color: #FA0452;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
         color: #fff;
         border: none;
         border-radius: 5px;
         transition: all 0.3s;
         &:hover{
-            background-color: #d40949f8;
+            background-color: #ac0137f8;
         }
     }
 }
 
+/* ----------toast message------------ */
+.msg-style-success{
+    width: 18%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 0.7rem 0.8rem;
+    border-radius: 5px;
+    border-left: 15px solid rgb(23, 187, 23);
+    background-color: rgb(73, 230, 73);
+    position: absolute;
+    right: 40px;
+    top: 82px
+}
+& .msg-style-fail{
+    width: 18%;
+    text-align: center;
+    color: #656363;
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 0.7rem 0.8rem;
+    border-radius: 5px;
+    border-left: 15px solid rgba(211, 28, 28, 0.845);
+    background-color: #f4d4d494;
+    position: absolute;
+    right: 40px;
+    top: 82px
+    
+   
+   
+
+
+     
+     
+    
+}
 /* -----loader ---------- */
 
 #loader-animation{
@@ -103,41 +142,119 @@ nav{
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        
        
     }    
 }
-
-
-
-/* ----------toast message------------ */
-
-.msg-style-success{
-    color: #fff;
-    font-size: 0.9rem;
-    text-align: center;
-    display: inline-block;
-    padding: 0.7rem 0.8rem;
-    border-radius: 5px;
-    border-left: 15px solid rgb(17, 197, 17);
-    background-color: rgb(127, 223, 127);
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, -50%);
+.loader-animated{
+    display: none;
+    & img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+       
+    }
 }
-.msg-style-fail{
-    width: 15%;
-    text-align: center;
-    color: #656363;
-    font-size: 0.9rem;
-    display: inline-block;
-    padding: 0.7rem 0.8rem;
-    border-radius: 5px;
-    border-left: 15px solid rgba(211, 28, 28, 0.845);
-    background-color: #f4d4d4;
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    transform: translate(-50%, -50%);
+
+
+
+
+/* ------------------product list css---------------- */
+.product_list{
+    & .card{
+        height: 75vh;
+        overflow-y: scroll;
+        border-radius: 1rem;
+        & .title{
+            color: RGB(52, 71, 103);
+            font-size: 24px;
+        }
+    }
+    & .addBtn{
+        margin-bottom: 2rem;
+        width: 10rem;
+        padding: 0.8rem 1.5rem;
+        background-color: #FA0452;
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+        &:hover{
+            background-color: #ac0137f8;
+        }
+
+    }
+    & .title{
+        font-size: 24px;
+        color: RGB(52, 71, 103);
+        font-weight: 600;
+        margin-bottom: 2rem;
+        
+    }
+    & table{
+        & thead{
+            & th{
+                color: #c5c8d0;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+        }
+        & tbody{
+            font-size: 13px;
+            & td{
+                color: RGB(52, 71, 103);
+                font-size: 14px;
+                font-weight: 600;
+                &:first-child{
+                    
+                    & img{
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 10px;
+                        margin-right: 1rem;
+                        
+                    }
+                    & p{
+                        font-size: 12px;
+                        color: RGB(131, 146, 171);
+                        font-weight: 400;
+                        display: block;
+                        margin-bottom: 0;
+                        padding: 5px 0;
+                        
+                    }
+                }
+                &:last-child{
+                    text-align: center;
+                }
+                & button{
+                    background-color: #EA0606;
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                    border-radius: 10px;
+                    &:first-child{
+                        background-color: #82D616;
+                    }
+                    & i{
+                        color: #fff;
+                        
+                        
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+}
    
-}
+
+
+
+
+
+

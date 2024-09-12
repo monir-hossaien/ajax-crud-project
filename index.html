@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- -------font awesome cdn------------ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ---------bootstrap css------------ -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- -------------Custom css----------------- -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>MERN CRUD</title>
+</head>
+
+<body>
+    <!-- ------------------navbar section----------------- -->
+    <section class="menubar-section mb-5 sticky-top">
+        <nav class="navbar navbar-expand-lg bg-black sticky-top">
+            <div class="container">
+                <!-- logo -->
+                <a class="navbar-brand text-white" href="#"><span>C</span>RUD.</a>
+
+                <!-- toggler button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="fa-solid fa-bars menu_icon"></i></span>
+                </button>
+
+                <!-- navbar-menu -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-5 mb-2 mb-lg-0 gap-md-4 gap-3 mt-3 mt-lg-0">
+                        <li class="nav-item">
+                            <a href="index.html">Product List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="creat.html">Create Product</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+
+    <!-- --------------product list------------------ -->
+
+    <section class="product_list">
+        <div class="container">
+            <div class="row">
+                <div class="card card rounded border-0 mb-5 py-5 px-4">
+                    <!-- <button type="button" class="addBtn">Add Product</button> -->
+                    <h4 class="title">Product List</h4>
+
+
+                    <!-- -------product table------------- -->
+
+                    <table id="productTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Unit Price</th>
+                                <th>Qty</th>
+                                <th>Total Price</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+
+                        <!-- ---------table body------------- -->
+                        <tbody id="itemList">
+                            
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- -------loader------ -->
+    <div id="loader-animation" class="loader-animated">
+        <img src="./image/loader.gif" alt="loader-img.png">
+    </div>
+    
+
+
+    
+    <!-- --------toast message------ -->
+    <p id="msg"></p>
+
+
+
+
+
+
+
+
+    
+
+    <!-- js link -->
+    <script src="./js/axios.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    
+</body>
+
+</html>
