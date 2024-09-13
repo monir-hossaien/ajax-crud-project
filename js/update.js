@@ -1,12 +1,12 @@
 const loader = document.getElementById("loader-animation");
 let toastMessage = document.getElementById("msg");
 
-let ProductName = document.getElementById("productName").value;
-let ProductCode = document.getElementById("productCode").value;
-let ProductImage = document.getElementById("productImg").value;
-let UnitPrice = document.getElementById("unitePrice").value;
-let ProductQty = document.getElementById("productQty").value;
-let TotalPrice = document.getElementById("totalPrice").value;
+let ProductNameInput = document.getElementById("productName");
+let ProductCodeInput = document.getElementById("productCode");
+let ProductImageInput = document.getElementById("productImg");
+let UnitPriceInput = document.getElementById("unitePrice");
+let ProductQtyInput = document.getElementById("productQty");
+let TotalPriceInput = document.getElementById("totalPrice");
 
 async function fillExistingData() {
   loader.style.display = "block";
@@ -15,27 +15,21 @@ async function fillExistingData() {
 
   let URL = `http://164.68.107.70:6060/api/v1/ReadProductById/${id}`;
   let res = await axios.get(URL);
+  
 
   if (res.status === 200) {
     loader.style.display = "none";
 
     let items = res.data["data"][0];
+    console.log(items)
+    ProductNameInput.value = items.ProductName;
+    ProductCodeInput.value = items.ProductCode;
+    ProductImageInput.value = items.Img;
+    UnitPriceInput.value = items.UnitPrice;
+    ProductQtyInput.value = items.Qty;
+    TotalPriceInput.value = items.TotalPrice;
 
-    ProductName = items.ProductName;
-    ProductCode = items.ProductCode;
-    ProductImage = items.Img;
-    UnitPrice = items.UnitPrice;
-    ProductQty = items.Qty;
-    TotalPrice = items.TotalPrice;
-
-    console.log(
-      ProductName,
-      ProductCode,
-      ProductImage,
-      UnitPrice,
-      ProductQty,
-      TotalPrice
-    );
+    
   }
 }
 
@@ -45,20 +39,20 @@ fillExistingData();
 
 // data object
 let data = {
-    ProductName: ProductName,
-    ProductCode: ProductCode,
-    Img: ProductImage,
-    UnitPrice: parseInt(UnitPrice),
-    Qty: parseInt(ProductQty),
-    TotalPrice: parseInt(TotalPrice),
+    ProductName: ProductNameInput,
+    ProductCode: ProductCodeInput,
+    Img: ProductImageInput,
+    UnitPrice: UnitPriceInput,
+    Qty: ProductQtyInput,
+    TotalPrice: TotalPriceInput
 };
 
-let URL = `http://164.68.107.70:6060/api/v1/UpdateProduct/${ProductID}`
 
 async function updateData(){
     loader.style.display = "block";
+    
+    let URL = `http://164.68.107.70:6060/api/v1/UpdateProduct/${ProductID}`
     let res = await axios.post(URL,data)
-    console.log(data)
     
     if(res.status === 200){
         // toast message
