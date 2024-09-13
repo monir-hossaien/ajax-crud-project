@@ -4,18 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- -------font awesome cdn------------ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- -----------response css---------- -->
+    <link rel="stylesheet" href="css/responsive.css">
+    
     <!-- ---------bootstrap css------------ -->
     <link rel="stylesheet" href="./css/bootstrap.css">
     <!-- -------------Custom css----------------- -->
     <link rel="stylesheet" href="./css/style.css">
+    
     <title>MERN CRUD</title>
 </head>
-
 <body>
 
-    <!-- -----------navbar section----------- -->
+    <!-- ------------------navbar section----------------- -->
     <section class="menubar-section mb-5 sticky-top">
-        <nav class="navbar navbar-expand-lg bg-black">
+        <nav class="navbar navbar-expand-lg bg-black sticky-top">
             <div class="container">
                 <!-- logo -->
                 <a class="navbar-brand text-white" href="#"><span>C</span>RUD.</a>
@@ -30,7 +37,7 @@
                 <!-- navbar-menu -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav me-5 mb-2 mb-lg-0 gap-md-4 gap-3 mt-3 mt-lg-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0 gap-md-4 gap-3 mt-3 mt-lg-0">
                         <li class="nav-item">
                             <a href="index.html">Product List</a>
                         </li>
@@ -45,12 +52,11 @@
     </section>
 
 
-
     <!-- ---------------product section------------ -->
-    <section class="product-section py-4">
+    <section class="product-section p-2">
         <div class="container">
             <div class="row">
-                <div class="card  p-5 rounded border-0 mb-5">
+                <div class="card  p-md-5 py-5 px-4  rounded border-0 mb-5">
                     <h3 class="title">Creat Product</h3>
                     <div class="row">
                         <div class="col-md-4">
@@ -84,7 +90,7 @@
                         </div>
 
                         <div class="col-md-2">
-                            <button type="submit" class="submitBtn" onclick="createData()">Submit</button>
+                            <button id="btn" type="submit" class="submitBtn" onclick="createData()">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -103,9 +109,10 @@
 
 
     <!-- js link -->
+    <script src="./js/axios.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/bootstrap.bundle.js"></script>
-    <script src="./js/axios.js"></script>
+    
 
 </body>
 

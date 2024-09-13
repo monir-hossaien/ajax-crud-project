@@ -21,7 +21,7 @@ async function fillExistingData() {
     loader.style.display = "none";
 
     let items = res.data["data"][0];
-    console.log(items)
+    
     ProductNameInput.value = items.ProductName;
     ProductCodeInput.value = items.ProductCode;
     ProductImageInput.value = items.Img;

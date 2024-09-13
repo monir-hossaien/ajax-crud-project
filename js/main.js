@@ -1,6 +1,8 @@
 let toastMessage = document.getElementById("msg");
+const btn = document.getElementById("btn")
 
 async function createData() {
+  
   //select element from dom
   let ProductName = document.getElementById("productName").value;
   let ProductCode = document.getElementById("productCode").value;
@@ -27,8 +29,8 @@ async function createData() {
     toastMessage.style.width = "18%";
 
     setTimeout(() => {
-      (toastMessage.innerHTML = ""),
-        toastMessage.classList.remove("msg-style-fail");
+      toastMessage.innerHTML = "",
+      toastMessage.classList.remove("msg-style-fail");
     }, 2000);
   } else if (ProductCode === "") {
     document.getElementById("loader-animation").style.display = "none";
@@ -37,8 +39,8 @@ async function createData() {
     toastMessage.style.width = "18%";
 
     setTimeout(() => {
-      (toastMessage.innerHTML = ""),
-        toastMessage.classList.remove("msg-style-fail");
+      toastMessage.innerHTML = "",
+      toastMessage.classList.remove("msg-style-fail");
     }, 2000);
   } else if (ProductImage === "") {
     document.getElementById("loader-animation").style.display = "none";
@@ -47,8 +49,8 @@ async function createData() {
     toastMessage.style.width = "18%";
 
     setTimeout(() => {
-      (toastMessage.innerHTML = ""),
-        toastMessage.classList.remove("msg-style-fail");
+      toastMessage.innerHTML = "",
+      toastMessage.classList.remove("msg-style-fail");
     }, 2000);
   } else if (UnitPrice === "") {
     document.getElementById("loader-animation").style.display = "none";
@@ -57,8 +59,8 @@ async function createData() {
     toastMessage.style.width = "18%";
 
     setTimeout(() => {
-      (toastMessage.innerHTML = ""),
-        toastMessage.classList.remove("msg-style-fail");
+      toastMessage.innerHTML = "",
+      toastMessage.classList.remove("msg-style-fail");
     }, 2000);
   } else if (ProductQty === "") {
     document.getElementById("loader-animation").style.display = "none";
@@ -67,8 +69,8 @@ async function createData() {
     toastMessage.style.width = "18%";
 
     setTimeout(() => {
-      (toastMessage.innerHTML = ""),
-        toastMessage.classList.remove("msg-style-fail");
+      toastMessage.innerHTML = "",
+      toastMessage.classList.remove("msg-style-fail");
     }, 2000);
   } else if (TotalPrice === "") {
     document.getElementById("loader-animation").style.display = "none";
@@ -77,30 +79,37 @@ async function createData() {
     toastMessage.style.width = "18%";
 
     setTimeout(() => {
-      (toastMessage.innerHTML = ""),
-        toastMessage.classList.remove("msg-style-fail");
+      toastMessage.innerHTML = "",
+      toastMessage.classList.remove("msg-style-fail");
     }, 2000);
   } else {
     //loader
     document.getElementById("loader-animation").style.display = "block";
-
+    
     // Data fetching from third party API
     let res = await axios.post(
       "http://164.68.107.70:6060/api/v1/CreateProduct",
       data
     );
-    
+
+    // submit button disable
+    btn.disabled=true;
+
     //loader
     document.getElementById("loader-animation").style.display = "none";
 
     if (res.status === 200) {
+
+      // submit button enable
+      btn.disabled=false;
+      
       // toast message
       toastMessage.innerHTML = "Request Sent Successfully";
       toastMessage.classList.add("msg-style-success");
 
       setTimeout(() => {
-        (toastMessage.innerHTML = ""),
-          toastMessage.classList.remove("msg-style-success");
+        toastMessage.innerHTML = "",
+        toastMessage.classList.remove("msg-style-success");
       }, 2000);
 
       // window.location = "/index.html"
@@ -112,7 +121,7 @@ async function createData() {
 
       setTimeout(() => {
         toastMessage.innerHTML = "",
-          toastMessage.classList.remove("msg-style-fail");
+        toastMessage.classList.remove("msg-style-fail");
       }, 2000);
     }
 
@@ -124,6 +133,3 @@ async function createData() {
     document.getElementById("totalPrice").value = "";
   }
 }
-
-
-
