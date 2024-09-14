@@ -8,10 +8,12 @@ let UnitPriceInput = document.getElementById("unitePrice");
 let ProductQtyInput = document.getElementById("productQty");
 let TotalPriceInput = document.getElementById("totalPrice");
 
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+
 async function fillExistingData() {
   loader.style.display = "block";
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get("id");
+  
 
   let URL = `http://164.68.107.70:6060/api/v1/ReadProductById/${id}`;
   let res = await axios.get(URL);
@@ -39,19 +41,19 @@ fillExistingData();
 
 // data object
 let data = {
-    ProductName: ProductNameInput,
-    ProductCode: ProductCodeInput,
-    Img: ProductImageInput,
-    UnitPrice: UnitPriceInput,
-    Qty: ProductQtyInput,
-    TotalPrice: TotalPriceInput
+    ProductName: ProductNameInput.value,
+    ProductCode: ProductCodeInput.value,
+    Img: ProductImageInput.value,
+    UnitPrice: UnitPriceInput.value,
+    Qty: ProductQtyInput.value,
+    TotalPrice: TotalPriceInput.value
 };
 
 
 async function updateData(){
     loader.style.display = "block";
-    
-    let URL = `http://164.68.107.70:6060/api/v1/UpdateProduct/${ProductID}`
+    console.log(id)
+    let URL = `http://164.68.107.70:6060/api/v1/UpdateProduct/${id}`
     let res = await axios.post(URL,data)
     
     if(res.status === 200){

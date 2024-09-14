@@ -17,6 +17,11 @@
             margin-left: 0;
         }
     }
+    #msg{
+        & .msg-style-fail{
+            width: 100%;
+        }
+    }
     
 
 }

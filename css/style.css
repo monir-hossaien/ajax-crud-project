@@ -99,12 +99,12 @@ nav{
 
 /* ----------toast message------------ */
 .msg-style-success{
-    width: 18%;
+    /* width: 18%; */
     text-align: center;
     color: #fff;
     font-size: 0.8rem;
     display: inline-block;
-    padding: 0.7rem 0.8rem;
+    padding: 1rem 0.8rem;
     border-radius: 5px;
     border-left: 15px solid rgb(23, 187, 23);
     background-color: rgb(73, 230, 73);
@@ -112,27 +112,21 @@ nav{
     right: 40px;
     top: 82px
 }
-& .msg-style-fail{
-    width: 18%;
+.msg-style-fail{
+    /* width: 18%; */
     text-align: center;
-    color: #656363;
+    color: #fff;
     font-size: 0.8rem;
     display: inline-block;
-    padding: 0.7rem 0.8rem;
+    padding: 1rem 0.8rem;
     border-radius: 5px;
     border-left: 15px solid rgba(211, 28, 28, 0.845);
-    background-color: #f4d4d494;
+    background-color: #e17474f2;
     position: absolute;
     right: 40px;
-    top: 82px
+    top: 82px;
     
-   
-   
-
-
-     
-     
-    
+        
 }
 /* -----loader ---------- */
 
