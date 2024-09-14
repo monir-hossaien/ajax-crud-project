@@ -52,11 +52,12 @@ let data = {
 
 async function updateData(){
     loader.style.display = "block";
-    console.log(id)
     let URL = `http://164.68.107.70:6060/api/v1/UpdateProduct/${id}`
     let res = await axios.post(URL,data)
     
     if(res.status === 200){
+
+      loader.style.display = "none";
         // toast message
       toastMessage.innerHTML = "Update Successfully";
       toastMessage.classList.add("msg-style-success");
@@ -67,7 +68,7 @@ async function updateData(){
       }, 2000);
     }
     else{
-        loader.style.display = "none";
+        
         toastMessage.innerHTML = "Request failed";
         toastMessage.classList.add("msg-style-fail");
 

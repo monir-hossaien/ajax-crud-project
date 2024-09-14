@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +19,8 @@
     
     <title>MERN CRUD</title>
 </head>
-<body>
 
+<body>
     <!-- ------------------navbar section----------------- -->
     <section class="menubar-section mb-5 sticky-top">
         <nav class="navbar navbar-expand-lg bg-black sticky-top">
@@ -39,10 +40,10 @@
 
                     <ul class="navbar-nav mb-2 mb-lg-0 gap-md-4 gap-3 mt-3 mt-lg-0">
                         <li class="nav-item">
-                            <a href="index.html">Product List</a>
+                            <a href="index.html">Create Product</a>
                         </li>
                         <li class="nav-item">
-                            <a href="creat.html">Create Product</a>
+                            <a href="list.html">Product List</a>
                         </li>
                     </ul>
 
@@ -51,69 +52,63 @@
         </nav>
     </section>
 
-
-    <!-- ---------------product section------------ -->
-    <section class="product-section p-2">
+    <!-- --------------product list------------------ -->
+    <section class="product_list">
         <div class="container">
             <div class="row">
-                <div class="card  p-md-5 py-5 px-4  rounded border-0 mb-5">
-                    <h3 class="title">Creat Product</h3>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="" id="productName" placeholder="Product Name"
-                                required>
-                        </div>
+                <div class="card card rounded border-0 mb-5 py-5 px-4">
+                    <!-- <button type="button" class="addBtn">Add Product</button> -->
+                    <h4 class="title">Product List</h4>
 
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="" id="productCode" placeholder="Product Code"
-                                required>
-                        </div>
 
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="" id="productImg" placeholder="Image"
-                                required>
-                        </div>
+                    <!-- -------product table------------- -->
 
-                        <div class="col-md-4">
-                            <input class="form-control" type="number" name="" id="unitePrice" placeholder="Unit Price"
-                                required>
-                        </div>
+                    <table id="productTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Unit Price</th>
+                                <th>Qty</th>
+                                <th>Total Price</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
 
-                        <div class="col-md-4">
-                            <input class="form-control" type="number" name="" id="productQty" placeholder="Qty"
-                                required>
-                        </div>
+                        <!-- ---------table body------------- -->
+                        <tbody id="itemList">
+                            
+                        </tbody>
+                    </table>
 
-                        <div class="col-md-4">
-                            <input class="form-control" type="number" name="" id="totalPrice" placeholder="Total Price"
-                                required>
-                        </div>
 
-                        <div class="col-md-2">
-                            <button id="btn" type="submit" class="submitBtn" onclick="createData()">Submit</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- -----------loader----------- -->
-    <div id="loader-animation">
+
+    <!-- -------loader------ -->
+    <div id="loader-animation" class="loader-animated">
         <img src="./image/loader.gif" alt="loader-img.png">
     </div>
-
+    
     <!-- --------toast message------ -->
     <p id="msg"></p>
 
-
-
     <!-- js link -->
     <script src="./js/axios.js"></script>
-    <script src="./js/main.js"></script>
     <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/script.js"></script>
     
-
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
